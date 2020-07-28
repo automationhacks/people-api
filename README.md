@@ -2,8 +2,6 @@
 
 Dummy REST API created using Flask, Connexion, Swagger and SQL Alchemy
 
-This follows the steps in [Read python tut on Flask connexion Rest API](https://realpython.com/flask-connexion-rest-api/#what-rest-is). Check out the original repo [here](https://github.com/realpython/materials/tree/master/flask-connexion-rest)
-
 ## Setup
 
 - Ensure you have pipenv available. Read this [blog](https://automationhacks.blog/2020/07/12/how-to-manage-your-python-virtualenvs-with-pipenv/) to understand all about pipenv
@@ -22,3 +20,9 @@ This follows the steps in [Read python tut on Flask connexion Rest API](https://
 ## Common Gotchas
 
 - To install swagger-ui, please run `pipenv install "connexion[swagger-ui]"`. Read this [bug](https://github.com/zalando/connexion/issues/779) to understand about why zsh needs this to be quoted.
+
+## Reference
+
+This follows the steps from a real python tutorial series written by [Doug Farrell](https://realpython.com/team/dfarrell/)
+
+- [Part 1: Building API and simple app with connexion, flask](https://realpython.com/flask-connexion-rest-api/#what-rest-is), Check out the original repo [here](https://github.com/realpython/materials/tree/master/flask-connexion-rest)
