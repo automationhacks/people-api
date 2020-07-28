@@ -60,5 +60,18 @@ def update(lname, person):
         return PEOPLE[lname]
     else:
         abort(
-            404, f"Person with last name {lname} not found"
+            404, f"Perrson with last name {lname} not found"
+        )
+
+def delete(lname):
+    """
+    Deletes person with last name
+    DELETE /api/people/{lname}
+    """
+    if lname in PEOPLE:
+        del PEOPLE[lname]
+        make_response(f'{lname} successfully deleted', 200)
+    else:
+        abort(
+            404, f'Person with last name {lname} not found'
         )

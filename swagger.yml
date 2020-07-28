@@ -112,4 +112,20 @@ paths:
       responses:
         200:
           description: Successfully updated the person in people list
+    delete:
+      operationId: people.delete
+      tags:
+        - People
+      summary: Delete a person in person list
+      description: Delete a person in the people list
+      parameters:
+        - name: lname
+          in: path
+          description: Last name of the person to delete in the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted the person in people list
+
 
