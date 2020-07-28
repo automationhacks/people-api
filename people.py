@@ -13,7 +13,7 @@ PEOPLE = {
 }
 
 
-def read():
+def read_all():
     """
     GET /api/people 
     :return:

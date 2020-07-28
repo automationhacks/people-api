@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 .idea/
 .vscode/
+
+# SQLlite database
+people.db
