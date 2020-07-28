@@ -2,7 +2,7 @@
 
 Dummy REST API created using Flask, Connexion, Swagger and SQL Alchemy
 
-This follows the steps in [Read python tut on Flask connexion Rest API](https://realpython.com/flask-connexion-rest-api/#what-rest-is)
+This follows the steps in [Read python tut on Flask connexion Rest API](https://realpython.com/flask-connexion-rest-api/#what-rest-is). Check out the original repo [here](https://github.com/realpython/materials/tree/master/flask-connexion-rest)
 
 ## Setup
 
@@ -17,6 +17,7 @@ This follows the steps in [Read python tut on Flask connexion Rest API](https://
 - `server.py` has the code to start the Flask app with connexion
 - `people.py` has the implementation for CRUD operations of the people API
 - `swagger.yml` has the swagger spec to define the route for the API while also allowing to build out a nice swagger documentation
+- `static` dir contains the `css` and `js` files (following MVC) which define the presentation and the interactions with the web apps API
 
 ## Common Gotchas
 
