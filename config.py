@@ -14,7 +14,7 @@ app = connex_app.app
 # Configure SQLAlchemy part of the app instance
 # Echo SQL statements it executes to console (useful to debug db programs)
 app.config['SQLALCHEMY_ECHO'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////' + os.path.join(base_dir, 'people.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(base_dir, 'people.db')
 # Below is typically on in event driven programs
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 

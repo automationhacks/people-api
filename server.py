@@ -1,7 +1,8 @@
 import connexion
 from flask import render_template
+import config
 
-app = connexion.App(__name__, specification_dir='./')
+app = config.connex_app
 app.add_api('swagger.yml')
 
 

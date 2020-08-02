@@ -26,7 +26,7 @@ Dummy REST API created using Flask, Connexion, Swagger and SQL Alchemy
 This follows the steps from a real python tutorial series written by [Doug Farrell](https://realpython.com/team/dfarrell/)
 
 - [Part 1: Building API and simple app with connexion, flask](https://realpython.com/flask-connexion-rest-api/#what-rest-is), Check out the original repo [here](https://github.com/realpython/materials/tree/master/flask-connexion-rest)
-- [Part 2: Adding database and ORM (SQL Alchemy)](https://realpython.com/flask-connexion-rest-api-part-2/#author)
+- [Part 2: Adding database and ORM (SQL Alchemy)](https://realpython.com/flask-connexion-rest-api-part-2/#author). Updated code can be found [here](https://github.com/realpython/materials/tree/master/flask-connexion-rest-part-2/version_1)
 
 ## Further read
 

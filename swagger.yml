@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  description: This is the swagger file that goes with our server code
+  description: Swagger file for people API 
   version: "1.0.0"
-  title: Swagger REST Article
+  title: Swagger for people API
 consumes:
   - "application/json"
 produces:
@@ -96,7 +96,7 @@ paths:
         - name: person_id
           in: path
           description: Id of the person to get
-          type: string
+          type: integer 
           required: True
       responses:
         200:
@@ -119,13 +119,13 @@ paths:
       operationId: people.update
       tags:
         - People
-      summary: Update a person in person list
-      description: Update a person in the people list
+      summary: Update a person 
+      description: Update a person 
       parameters:
-        - name: lname
+        - name: person_id 
           in: path
-          description: Last name of the person to update in the list
-          type: string
+          description: Id of the person to update
+          type: integer 
           required: True
         - name: person
           in: body
@@ -134,11 +134,27 @@ paths:
             properties: 
               fname: 
                 type: string
+                description: first name of the person
               lname:
                 type: string
+                description: last name of the person
       responses:
         200:
-          description: Successfully updated the person in people list
+          description: Successfully updated the person
+          schema:
+            properties:
+              person_id:
+                type: string
+                description: id of the person
+              fname:
+                type: string
+                description: first name of the person
+              lname:
+                type: string
+                description: last name of the person
+              timestamp:
+                type: string
+                description: creation/updation timestamp of the person record
     delete:
       operationId: people.delete
       tags:
@@ -146,13 +162,13 @@ paths:
       summary: Delete a person in person list
       description: Delete a person in the people list
       parameters:
-        - name: lname
+        - name: person_id
           in: path
-          description: Last name of the person to delete in the list
-          type: string
+          type: integer
+          description: Id of the person to delete in the list
           required: True
       responses:
         200:
-          description: Successfully deleted the person in people list
+          description: Successfully deleted a person
 
 
