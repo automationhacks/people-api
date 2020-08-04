@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "f31276b2-8792-4315-9146-f8daea2f2606",
+		"name": "People",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9609f0ea-4c37-4ad8-90bf-09ae8a80811d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Read all has kent person\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[0].fname).to.eql(\"Kent\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/people",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"people"
+					]
+				},
+				"description": "- Returns a list of people present in the db with their first name, last name, id and a timestamp on when they were created"
+			},
+			"response": [
+				{
+					"name": "Read all Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/people",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "482"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Aug 2020 16:25:21 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"fname\": \"Kent\",\n        \"lname\": \"Brockman\",\n        \"person_id\": 2,\n        \"timestamp\": \"2020-08-03T02:15:14.681916\"\n    },\n    {\n        \"fname\": \"Bunny\",\n        \"lname\": \"Easter\",\n        \"person_id\": 3,\n        \"timestamp\": \"2020-08-03T02:15:14.682212\"\n    },\n    {\n        \"fname\": \"Doug\",\n        \"lname\": \"Farrell\",\n        \"person_id\": 1,\n        \"timestamp\": \"2020-08-03T02:15:14.680698\"\n    },\n    {\n        \"fname\": \"Alberto\",\n        \"lname\": \"Sv\",\n        \"person_id\": 4,\n        \"timestamp\": \"2020-08-04T15:36:02.522448\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Read one",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd66a4ee-afe8-425f-9b29-8d2043fd70e5",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/people/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"people",
+						"1"
+					]
+				},
+				"description": "Returns person in the db with person_id in the path params"
+			},
+			"response": [
+				{
+					"name": "Read one success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/people/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Aug 2020 16:28:54 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fname\": \"Doug\",\n    \"lname\": \"Farrell\",\n    \"person_id\": 1,\n    \"timestamp\": \"2020-08-03T02:15:14.680698\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "284ebb4b-d461-47f7-96d9-bf1d12de4621",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"fname\": \"TAU\",  \n   \"lname\": \"User\"  \n }"
+				},
+				"url": {
+					"raw": "{{host}}/api/people",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"people"
+					]
+				},
+				"description": "Adds a person to the db"
+			},
+			"response": [
+				{
+					"name": "Create Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fname\": \"TAU\",  \n   \"lname\": \"User\"  \n }"
+						},
+						"url": {
+							"raw": "{{host}}/api/people",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people"
+							]
+						}
+					},
+					"status": "NO CONTENT",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Aug 2020 16:31:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6037ff70-acb0-41a2-b9e1-86b14bd6ff7a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/people/4",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"people",
+						"4"
+					]
+				},
+				"description": "Removes a person from the db"
+			},
+			"response": [
+				{
+					"name": "Delete success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/html"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/people/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Aug 2020 15:28:18 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Person with id 4 successfully deleted"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1c39e6b3-a998-4148-b8f9-b7fa7645423b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"fname\": \"Kento\",  \n   \"lname\": \"Brockod\"  \n }"
+				},
+				"url": {
+					"raw": "{{host}}/api/people/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"people",
+						"2"
+					]
+				},
+				"description": "Updates first, last name of a person by person_id (in path params)"
+			},
+			"response": [
+				{
+					"name": "Update success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fname\": \"Kento\",  \n   \"lname\": \"Brockod\"  \n }"
+						},
+						"url": {
+							"raw": "{{host}}/api/people/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"people",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Aug 2020 16:36:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"fname\": \"Kento\",\n    \"lname\": \"Brockod\",\n    \"person_id\": 2,\n    \"timestamp\": \"2020-08-04T16:36:55.672790\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
