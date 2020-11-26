@@ -7,8 +7,8 @@ from sqlalchemy import true
 class Person(db.Model):
     __table_name__ = "person"
     person_id = db.Column(db.Integer, primary_key=True)
-    lname = db.Column(db.String(32), index=True)
-    fname = db.Column(db.String(32))
+    lname = db.Column(db.String(100), index=True)
+    fname = db.Column(db.String(100))
     timestamp = db.Column(
         db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow
     )
