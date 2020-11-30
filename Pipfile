@@ -12,6 +12,8 @@ flask-sqlalchemy = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 marshmallow = "*"
+assertpy = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"
