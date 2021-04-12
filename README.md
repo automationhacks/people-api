@@ -39,6 +39,9 @@ Uses Flask, Connexion, Swagger and SQL Alchemy
 - To install swagger-ui, please run `pipenv install "connexion[swagger-ui]"`. Read this
   [bug](https://github.com/zalando/connexion/issues/779) to understand about why zsh needs this to
   be quoted.
+- If you are on windows platform, 
+  - Try using `127.0.0.1` as the host instead of `0.0.0.0`
+  - Also enclose the URL in CURL with double quotes instead of single quotes (Reference thread on [stack overflow](https://stackoverflow.com/questions/6884669/curl-1-protocol-https-not-supported-or-disabled-in-libcurl/24232441#24232441)) 
 
 ## Reference
 
