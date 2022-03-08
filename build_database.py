@@ -6,6 +6,7 @@ PEOPLE = [
     {"fname": "Doug", "lname": "Farrell"},
     {"fname": "Kent", "lname": "Brockman"},
     {"fname": "Bunny", "lname": "Easter"},
+    {"fname": "raiyeem","lname":"Farhan"},
 ]
 
 if os.path.exists('people.db'):
