@@ -13,7 +13,7 @@ Uses Flask, Connexion, Swagger and SQL Alchemy
 ## Setup
 
 - Ensure you have pipenv available. Read this
-  [blog](https://automationhacks.blog/2020/07/12/how-to-manage-your-python-virtualenvs-with-pipenv/)
+  [blog](https://automationhacks.io/2020/07/12/how-to-manage-your-python-virtualenvs-with-pipenv/)
   to understand all about pipenv
 - Ensure you have cloned this repo and are in the project root directory that has the `Pipfile` with
   definitions of all required dependencies.
