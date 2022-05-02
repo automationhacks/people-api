@@ -8,8 +8,8 @@ PEOPLE = [
     {"fname": "Bunny", "lname": "Easter"},
 ]
 
-if os.path.exists('people.db'):
-    os.remove('people.db')
+#if os.path.exists('people.db'):
+#    os.remove('people.db')
 
 # Create database
 db.create_all()

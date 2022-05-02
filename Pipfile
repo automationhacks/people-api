@@ -8,12 +8,13 @@ verify_ssl = true
 [packages]
 flask = "*"
 connexion = {extras = ["swagger-ui"], version = "*"}
-flask-sqlalchemy = "*"
+flask-sqlalchemy = "==2.5.1"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 marshmallow = "*"
 assertpy = "*"
 pytest = "*"
+sqlalchemy = "==1.4.3"
 
 [requires]
 python_version = "3.8"
