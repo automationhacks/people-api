@@ -6,15 +6,15 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-flask = "*"
+flask = "==2.2.3"
 connexion = {extras = ["swagger-ui"], version = "*"}
 flask-sqlalchemy = "==2.5.1"
-flask-marshmallow = "*"
-marshmallow-sqlalchemy = "*"
+flask-marshmallow = "==0.14.0"
+marshmallow-sqlalchemy = "==0.28.2"
 marshmallow = "*"
 assertpy = "*"
 pytest = "*"
 sqlalchemy = "==1.4.3"
 
 [requires]
-python_version = "3.8"
+python_version = "3.11"
